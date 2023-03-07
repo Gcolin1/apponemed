@@ -1,0 +1,72 @@
+*{
+    font-family: 'Koho', sans-serif;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container_login{
+    background-image: url("../../assets/fundo-login.png");
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+
+    h1{
+        text-align: center;
+        margin-top: 50px;
+        font-size: 2em;
+        font-weight: bold;
+    }
+
+    .inputs{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 70px;
+
+        .inp{
+            width: 250px;
+            font-size: 1.3em;
+            padding: 10px 20px;
+            margin-bottom: 15px;
+            background-color: #f2f2f242;
+            border: none;
+            border-radius: 10px;
+        }
+
+        .inp::placeholder{
+            color: #f2f2f2;
+            font-weight: bold;
+            font-size: 0.7em;
+        }
+    }
+
+    .link{
+        text-decoration: none;
+        color: #fff;
+        font-size: 0.9em;
+        margin-left: 55px;
+    }
+
+    .container-button{
+        text-align: center;
+        margin-top: 25%;
+
+        .btn-entrar{
+            background-color: #fff;
+            padding: 30px;
+            font-size: 2em;
+            border-radius: 50%;
+            font-weight: bold;
+            -webkit-box-shadow: 0px 7px 9px -4px rgba(0,0,0,0.75);
+            -moz-box-shadow: 0px 7px 9px -4px rgba(0,0,0,0.75);
+            box-shadow: 0px 7px 9px -4px rgba(0,0,0,0.75);
+
+            .seta{
+                margin-top: 30px;
+                color: #073A79;
+            }
+        }
+    }
+
+    
+}

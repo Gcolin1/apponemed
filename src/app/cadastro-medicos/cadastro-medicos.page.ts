@@ -10,10 +10,12 @@ import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms'
 })
 export class CadastroMedicosPage implements OnInit {
 
+  //variavel cadastro do tipo formgroup
   cadastro: FormGroup;
 
   constructor(private service : CadastroMedicoService) {
 
+    //guardando dados do formulario na variavel cadastro
     this.cadastro = new FormGroup({
       nome: new FormControl(''),
       email: new FormControl(''),
@@ -32,13 +34,11 @@ export class CadastroMedicosPage implements OnInit {
     })
    }
 
+   //função que envia dados do formulario para a função cadastrar do service
    onSubmit() {
     console.log(JSON.stringify(this.cadastro.value))
-
     this.service.cadastrar(this.cadastro.value).subscribe(resposta => {
       console.log(resposta)
-
-      
     })
   }
 

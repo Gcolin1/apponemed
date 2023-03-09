@@ -22,6 +22,11 @@ const routes: Routes = [
     path: 'cadastro-medicos',
     loadChildren: () => import('./cadastro-medicos/cadastro-medicos.module').then( m => m.CadastroMedicosPageModule)
   },
+  {
+    path: 'splash',
+    loadChildren: () => import('./splash/splash.module').then( m => m.SplashPageModule)
+  },
+
 ];
 @NgModule({
   imports: [

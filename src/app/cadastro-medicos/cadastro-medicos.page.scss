@@ -10,6 +10,7 @@
   display: flex;
   align-items: center;
   margin-bottom: 30px;
+  margin-top: 50px;
 
   .seta{
     color: #757575;
@@ -20,10 +21,12 @@
 }
 
 .container-cadastro{
-  margin-top: 20px;
   display: flex;
+  height: 100%;
+  width: 100%;
   flex-direction: column;
   align-items: center;
+  height: 100%;
 
   h3{
     text-align: center;

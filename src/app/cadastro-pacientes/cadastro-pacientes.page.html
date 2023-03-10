@@ -1,9 +1,7 @@
-<ion-content>
-
-  <div class="container-cadastro">
+<div class="container-cadastro">
     <a class="link" routerLink="/tabs/home" routerLinkActive="active" >
       <ion-icon class="seta" name="arrow-back"></ion-icon>
-      Cadastro de medicos
+      Cadastro de pacientes
     </a>
 
     <form method="post" [formGroup]="cadastro" (ngSubmit)="onSubmit(cadastro)">
@@ -21,20 +19,8 @@
       </div>
       <div class="form-group">
         <ion-item class="inp" fill="outline">
-          <ion-label position="floating">CRM</ion-label>
-          <ion-input placeholder="crm" type="text" name="crm" id="crm" formControlName="crm" ngModel required></ion-input>
-        </ion-item>
-      </div>
-      <div class="form-group">
-        <ion-item class="inp" fill="outline">
-          <ion-label position="floating">Telefone</ion-label>
-          <ion-input placeholder="Telefone" type="text" name="telefone" formControlName="telefone" id="telefone" ngModel required></ion-input>
-        </ion-item>
-      </div>
-      <div class="form-group">
-        <ion-item class="inp" fill="outline">
-          <ion-label position="floating">Especialidade</ion-label>
-          <ion-input placeholder="Especialidade" type="text" formControlName="especialidade" name="especialidade" id="especialidade" ngModel required></ion-input>
+          <ion-label position="floating">CPF</ion-label>
+          <ion-input placeholder="cpf" type="text" name="cpf" id="cpf" formControlName="cpf" ngModel required></ion-input>
         </ion-item>
       </div>
       <h3>Endereço</h3>
@@ -85,4 +71,5 @@
       <button class="btn" type="submit">Cadastrar</button>
     </form>
   </div>
-</ion-content>
+
+

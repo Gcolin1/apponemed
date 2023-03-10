@@ -52,5 +52,37 @@
     }
   }
 
+  .container_listas{
+    background-color: #fff;
+    width: 100%;
+    position: absolute;
+    padding-bottom: 40%;
+    bottom: 0;
+    border-radius: 50px 50px 0 0;
+
+    .container-items{
+      margin-top: 50px;
+    }
+
+    .item{
+      display: flex;
+      border-bottom: 2px solid #073A79;
+      width: 80%;
+      margin-left: 10%;
+      align-items: center;
+      cursor: pointer;
+
+      p{
+        color: #073A79;
+      }
+
+      img{
+        width: 20px;
+        height: 20px;
+        margin-right: 10px;
+      }
+    }
+  }
+
   
 }

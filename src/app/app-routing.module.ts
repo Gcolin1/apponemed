@@ -25,7 +25,15 @@ const routes: Routes = [
   {
     path: 'splash',
     loadChildren: () => import('./splash/splash.module').then( m => m.SplashPageModule)
+  },  {
+    path: 'lista-medicos',
+    loadChildren: () => import('./lista-medicos/lista-medicos.module').then( m => m.ListaMedicosPageModule)
   },
+  {
+    path: 'cadastro-pacientes',
+    loadChildren: () => import('./cadastro-pacientes/cadastro-pacientes.module').then( m => m.CadastroPacientesPageModule)
+  },
+
 
 ];
 @NgModule({

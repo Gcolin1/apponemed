@@ -41,9 +41,10 @@ export class CadastroMedicosPage implements OnInit {
     if(this.cadastro.valid){
       this.service.cadastrar(this.cadastro.value).subscribe(resposta => {
         console.log(resposta)
-        cadastro.reset()
-        this.Alert()
       })
+      cadastro.reset()
+        this.Alert()
+        
     }else{
       this.AlertError()
     }

@@ -4,18 +4,67 @@
     Cadastro de medicos
   </a>
 
+  <div class="container_busca">
+    <ion-button class="btn" (click)="setOpen(true)">Buscar</ion-button>
+    <ion-modal [isOpen]="isModalOpen">
+      <ng-template>
+        <ion-header>
+          <ion-toolbar style="--background: #fff; --color: #000; font-weight: bold;">
+            <ion-title>busca</ion-title>
+            <ion-buttons slot="end">
+              <ion-button (click)="setOpen(false)">Close</ion-button>
+            </ion-buttons>
+          </ion-toolbar>
+        </ion-header>
+        <ion-content style="--background: #fff; --color: #000;" class="ion-padding">
+          <p style="font-size: 1.1em;" >Digite o nome do medico para realizar a busca</p>
+          <form method="post" (ngSubmit)="buscarMedico()">
+            <div class="form-group">
+              <ion-item class="inp" fill="outline">
+                <ion-label position="floating">Nome</ion-label>
+                <ion-input placeholder="Nome" type="text" name="nome" id="nome" [(ngModel)]="nome " required ></ion-input>
+              </ion-item>
+            </div>
+            <button style="background: #073A79; color: #fff; padding: 10px 20px; margin: 30px 0; margin-left: 5px; font-size: 1em; border-radius: 5px;" class="btnBuscar" type="submit">  
+              Buscar
+            </button>
+            <button style="background: #4e4e4e; color: #fff; padding: 10px 20px; margin: 30px 0; margin-left: 30px; font-size: 1em; border-radius: 5px;" (click)="LimparTabela()">Limpar</button>
+          </form>
+
+          <div padding>
+            <ion-grid class="table">
+              <ion-row class="table-line" style="background: #073A79; color: #fff; padding: 10px 10px;">
+                <ion-col class="line_value">Nome</ion-col>
+                <ion-col class="line_value crm_value">CRM</ion-col>
+              </ion-row>
+              <ng-container *ngIf="medicoBusca.length">
+                <ion-row style="background: #f2f2f2;" class="row2" *ngFor="let busca of medicoBusca">
+                  <ion-col class="valor">{{ busca.nome }}</ion-col>
+                  <ion-col class="valor">{{ busca.crm }}</ion-col> 
+                </ion-row>
+              </ng-container>
+              <ng-container *ngIf="!medicoBusca.length">
+                <ion-row>
+                  <ion-col>Nenhum resultado encontrado</ion-col>
+                </ion-row>
+              </ng-container>
+            </ion-grid>
+          </div>
+        </ion-content>
+      </ng-template>
+    </ion-modal>
+  </div>
+
   <div padding>
     <ion-grid class="table">
       <ion-row class="table-line">
         <ion-col class="line_value">Nome</ion-col>
-        <ion-col class="line_value">Especialidade</ion-col>
         <ion-col class="line_value crm_value">CRM</ion-col>
       </ion-row>
       <div>
-        <ion-row class="row2">
-          <ion-col class="valor"></ion-col>
-          <ion-col class="valor"></ion-col>
-          <ion-col class="valor"></ion-col> 
+        <ion-row class="row2" *ngFor="let medico of medicos">
+          <ion-col class="valor">{{ medico.nome }}</ion-col>
+          <ion-col class="valor">{{ medico.crm }}</ion-col> 
         </ion-row>
       </div>
     </ion-grid>

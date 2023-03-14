@@ -41,8 +41,14 @@
       <div formGroupName="endereco">
         <div class="form-group">
           <ion-item class="inp" fill="outline">
-            <ion-label position="floating">Complemento</ion-label>
-            <ion-input placeholder="Complemento" type="text" formControlName="complemento" name="Complemento" id="complemento" ngModel required></ion-input>
+            <ion-label position="floating">CEP</ion-label>
+            <ion-input placeholder="CEP" type="text" name="cep" id="cep" formControlName="cep" ngModel required></ion-input>
+          </ion-item>
+        </div>
+        <div class="form-group">
+          <ion-item class="inp"  fill="outline">
+            <ion-label position="floating">Logradouro</ion-label>
+            <ion-input placeholder="Logradouro" type="text" name="logradouro" formControlName="logradouro" id="logradouro" ngModel required></ion-input>
           </ion-item>
         </div>
         <div class="form-group">
@@ -53,8 +59,8 @@
         </div>
         <div class="form-group">
           <ion-item class="inp" fill="outline">
-            <ion-label position="floating">CEP</ion-label>
-            <ion-input placeholder="CEP" type="text" name="cep" id="cep" formControlName="cep" ngModel required></ion-input>
+            <ion-label position="floating">Complemento</ion-label>
+            <ion-input placeholder="Complemento" type="text" formControlName="complemento" name="Complemento" id="complemento" ngModel required></ion-input>
           </ion-item>
         </div>
         <div class="form-group">
@@ -74,13 +80,7 @@
             <ion-label position="floating">UF</ion-label>
             <ion-input placeholder="UF" type="text" name="uf" id="uf"  formControlName="uf" ngModel required></ion-input>
           </ion-item>
-        </div>
-        <div class="form-group">
-          <ion-item class="inp"  fill="outline">
-            <ion-label position="floating">Logradouro</ion-label>
-            <ion-input placeholder="Logradouro" type="text" name="logradouro" formControlName="logradouro" id="logradouro" ngModel required></ion-input>
-          </ion-item>
-        </div>
+        </div>  
       </div>
       <button class="btn" type="submit">Cadastrar</button>
     </form>

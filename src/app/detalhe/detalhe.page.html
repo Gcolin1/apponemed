@@ -1,0 +1,24 @@
+<ion-content style="--background: #fff">
+  <a class="link" routerLink="/lista-medicos" routerLinkActive="active" >
+    <ion-icon class="seta" name="arrow-back"></ion-icon>
+    Lista de medicos
+  </a>
+
+  <div class="container_dados">
+    <div class="fundo-dados" *ngFor="let medico of medicoDetalhe" >
+        <h2>Dados pessoais</h2>
+        <p>Nome: {{ medico.nome }}</p>
+        <p>E-mail: {{ medico.email }}</p>
+        <p>CRM: {{ medico.crm }}</p>
+        <p>Especialidade {{ medico.especialidade }}</p>
+
+        <h2>Endereço</h2>
+        <p>Bairro: {{ medico.endereco.bairro }}</p>
+        <p>Logradouro: {{ medico.endereco.logradouro }}</p>
+        <p>Numero: {{ medico.endereco.numero }}</p>
+        <p>Cidade: {{ medico.endereco.cidade }}</p>
+        <p>UF: {{ medico.endereco.uf }}</p>
+        <p>Complemento: {{ medico.endereco.complemento }}</p>
+    </div>
+  </div>
+</ion-content>

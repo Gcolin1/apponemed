@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Medico } from '../Medico';
 import { ListaMedicoService } from './lista-medico.service';
@@ -19,10 +20,14 @@ export class ListaMedicosPage implements OnInit {
     this.isModalOpen = isOpen;
   }
 
-  constructor(private service : ListaMedicoService) {}
+  constructor(private service : ListaMedicoService, private router : Router) {}
 
   ngOnInit(){
     this.getAllMedicos()
+  }
+
+  redirecionarDetalhe(id : any){
+    this.router.navigateByUrl(`detalhe/${id}`);
   }
 
   getAllMedicos(): void{
@@ -32,6 +37,8 @@ export class ListaMedicosPage implements OnInit {
     })
   }
 
+
+
   buscarMedico() {
       this.service.buscarPorNome(this.nome).subscribe(resposta => {
         this.medicoBusca = resposta
@@ -39,8 +46,8 @@ export class ListaMedicosPage implements OnInit {
   }
 
   LimparTabela(){
-    this.medicoBusca = []    
-    this.nome = ''  
+    this.medicoBusca = []
+    this.nome = ''
   }
 
 }

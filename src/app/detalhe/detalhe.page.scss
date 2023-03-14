@@ -1,0 +1,41 @@
+.fundo-dados{
+  background-color: #fff;
+  width: 90%;
+  padding: 20px;
+  border-radius: 20px;
+  -webkit-box-shadow: 0px 0px 8px 1px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 0px 8px 1px rgba(0,0,0,0.75);
+  box-shadow: 0px 0px 8px 1px rgba(0,0,0,0.75);
+}
+
+.link{
+  text-decoration: none;
+  color: #8b8b8b;
+  display: flex;
+  align-items: center;
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-top: 30px;
+  margin-bottom: 50px;
+  margin-left: 20px;
+
+  .seta{
+      margin-right: 10px;
+      font-size: 1em;
+  }
+}
+
+.container_dados{
+  display: flex;
+  justify-content: center;
+
+  .fundo-dados p{
+    color: #073A79;
+    font-weight: bold;
+  }
+
+  .fundo-dados h2{
+    color: #616161;
+    font-weight: bold;
+  }
+}

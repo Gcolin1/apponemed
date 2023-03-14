@@ -19,7 +19,7 @@ export class CadastroPacientesPage implements OnInit {
     this.cadastro = new FormGroup({
       nome: new FormControl('', Validators.required),
       email: new FormControl('', [Validators.email, Validators.required]),
-      cpf: new FormControl('', [Validators.required, Validators.minLength(6), Validators.maxLength(6)]),
+      cpf: new FormControl('', [Validators.required, Validators.minLength(11), Validators.maxLength(11)]),
       endereco: new FormGroup({
         complemento: new FormControl(''),
         numero: new FormControl(''),

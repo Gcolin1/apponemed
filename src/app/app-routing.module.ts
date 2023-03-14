@@ -37,9 +37,14 @@ const routes: Routes = [
   {
     path: 'cadastro-enfermeiros',
     loadChildren: () => import('./cadastro-enfermeiros/cadastro-enfermeiros.module').then( m => m.CadastroEnfermeirosPageModule)
-  },  {
+  },
+  {
     path: 'lista-enfermeiros',
     loadChildren: () => import('./lista-enfermeiros/lista-enfermeiros.module').then( m => m.ListaEnfermeirosPageModule)
+  },
+  {
+    path: 'detalhe/:id',
+    loadChildren: () => import('./detalhe/detalhe.module').then( m => m.DetalhePageModule)
   },
 
 

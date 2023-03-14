@@ -21,4 +21,8 @@ export class ListaMedicoService{
     return this.http.get<any>(`${this.urlApi}/buscar?nome=${nome}`)
   }
 
+  buscarMedicoId(id : any){
+    return this.http.get<any>(`${this.urlApi}/${id}`)
+  }
+
 }

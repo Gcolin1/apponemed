@@ -62,7 +62,7 @@
         <ion-col class="line_value crm_value">CRM</ion-col>
       </ion-row>
       <div>
-        <ion-row class="row2" *ngFor="let medico of medicos">
+        <ion-row class="row2" (click)="redirecionarDetalhe(medico.id)" *ngFor="let medico of medicos">
           <ion-col class="valor">{{ medico.nome }}</ion-col>
           <ion-col class="valor">{{ medico.crm }}</ion-col>
         </ion-row>

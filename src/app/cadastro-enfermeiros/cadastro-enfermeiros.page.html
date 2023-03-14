@@ -1,0 +1,88 @@
+<ion-content>
+
+  <div class="container-cadastro">
+    <a class="link" routerLink="/tabs/home" routerLinkActive="active" >
+      <ion-icon class="seta" name="arrow-back"></ion-icon>
+      Cadastro de enfermeiros
+    </a>
+
+    <form method="post" [formGroup]="cadastro" (ngSubmit)="onSubmit(cadastro)">
+      <div class="form-group">
+        <ion-item class="inp" fill="outline">
+          <ion-label position="floating">Nome</ion-label>
+          <ion-input placeholder="Nome" type="text" formControlName="nome" name="nome" id="nome" ngModel required ></ion-input>
+        </ion-item>
+      </div>
+      <div class="form-group">
+        <ion-item class="inp" fill="outline">
+          <ion-label position="floating">E-mail</ion-label>
+          <ion-input placeholder="E-mail" type="email" formControlName="email" name="email" id="email" ngModel required email></ion-input>
+        </ion-item>
+      </div>
+      <div class="form-group">
+        <ion-item class="inp" fill="outline">
+          <ion-label position="floating">CRE</ion-label>
+          <ion-input placeholder="crm" type="text" name="cre" id="cre" formControlName="cre" ngModel required></ion-input>
+        </ion-item>
+      </div>
+      <div class="form-group">
+        <ion-item class="inp" fill="outline">
+          <ion-label position="floating">Telefone</ion-label>
+          <ion-input placeholder="Telefone" type="text" name="telefone" formControlName="telefone" id="telefone" ngModel required></ion-input>
+        </ion-item>
+      </div>
+      <div class="form-group">
+        <ion-item class="inp" fill="outline">
+          <ion-label position="floating">CPF</ion-label>
+          <ion-input placeholder="CPF" type="text" formControlName="cpf" name="cpf" id="cpf" ngModel required></ion-input>
+        </ion-item>
+      </div>
+      <h3>Endereço</h3>
+      <div formGroupName="endereco">
+        <div class="form-group">
+          <ion-item class="inp" fill="outline">
+            <ion-label position="floating">Complemento</ion-label>
+            <ion-input placeholder="Complemento" type="text" formControlName="complemento" name="Complemento" id="complemento" ngModel required></ion-input>
+          </ion-item>
+        </div>
+        <div class="form-group">
+          <ion-item class="inp" fill="outline">
+            <ion-label position="floating">Numero</ion-label>
+            <ion-input placeholder="Numero" type="text" name="numero" id="numero" formControlName="numero" ngModel required></ion-input>
+          </ion-item>
+        </div>
+        <div class="form-group">
+          <ion-item class="inp" fill="outline">
+            <ion-label position="floating">CEP</ion-label>
+            <ion-input placeholder="CEP" type="text" name="cep" id="cep" formControlName="cep" ngModel required></ion-input>
+          </ion-item>
+        </div>
+        <div class="form-group">
+          <ion-item class="inp" fill="outline">
+            <ion-label position="floating">Cidade</ion-label>
+            <ion-input placeholder="Cidade" type="text" name="cidade" id="cidade" formControlName="cidade" ngModel required></ion-input>
+          </ion-item>
+        </div>
+        <div class="form-group">
+          <ion-item class="inp" fill="outline">
+            <ion-label position="floating">Bairro</ion-label>
+            <ion-input placeholder="Bairro" type="text" name="bairro" id="bairro" formControlName="bairro" ngModel required></ion-input>
+          </ion-item>
+        </div>
+        <div class="form-group">
+          <ion-item class="inp" fill="outline">
+            <ion-label position="floating">UF</ion-label>
+            <ion-input placeholder="UF" type="text" name="uf" id="uf"  formControlName="uf" ngModel required></ion-input>
+          </ion-item>
+        </div>
+        <div class="form-group">
+          <ion-item class="inp"  fill="outline">
+            <ion-label position="floating">Logradouro</ion-label>
+            <ion-input placeholder="Logradouro" type="text" name="logradouro" formControlName="logradouro" id="logradouro" ngModel required></ion-input>
+          </ion-item>
+        </div>
+      </div>
+      <button class="btn" type="submit">Cadastrar</button>
+    </form>
+  </div>
+</ion-content>

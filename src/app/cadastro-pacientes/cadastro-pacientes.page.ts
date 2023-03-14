@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { CadastroPacienteService } from './cadastro-pacientes.service';
@@ -12,7 +13,7 @@ export class CadastroPacientesPage implements OnInit {
 
   cadastro: FormGroup;
 
-  constructor(private service : CadastroPacienteService, private alertController: AlertController) { 
+  constructor(private service : CadastroPacienteService, private alertController: AlertController, private router : Router) {
 
     //guardando dados do formulario na variavel cadastro
     this.cadastro = new FormGroup({
@@ -40,6 +41,7 @@ export class CadastroPacientesPage implements OnInit {
       })
       cadastro.reset()
       this.Alert()
+      this.router.navigateByUrl('home')
     }else{
       this.AlertError()
     }
@@ -51,7 +53,7 @@ export class CadastroPacientesPage implements OnInit {
       message: 'Seu cadastro foi realizado com sucesso!',
       buttons: ['OK']
     });
-  
+
     await alert.present();
   }
 
@@ -61,7 +63,7 @@ export class CadastroPacientesPage implements OnInit {
       message: 'Dados cadastrais invalidos',
       buttons: ['OK']
     });
-  
+
     await alert.present();
   }
 

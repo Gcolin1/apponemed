@@ -1,28 +1,24 @@
-import { Router } from '@angular/router';
-import { CadastroMedicoService } from './cadastro-medico.service';
-import { Component, OnInit } from '@angular/core';
-
-import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
 import { AlertController } from '@ionic/angular';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { CadastroEnfermeirosService } from './cadastro-enfermeiros.service';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-cadastro-medicos',
-  templateUrl: './cadastro-medicos.page.html',
-  styleUrls: ['./cadastro-medicos.page.scss'],
+  selector: 'app-cadastro-enfermeiros',
+  templateUrl: './cadastro-enfermeiros.page.html',
+  styleUrls: ['./cadastro-enfermeiros.page.scss'],
 })
-export class CadastroMedicosPage implements OnInit {
-
-  //variavel cadastro do tipo formgroup
+export class CadastroEnfermeirosPage implements OnInit {
   cadastro: FormGroup;
 
-  constructor(private service : CadastroMedicoService, private alertController: AlertController, private router : Router) {
+  constructor(private service : CadastroEnfermeirosService, private alertController: AlertController, private router : Router) {
 
-    //guardando dados do formulario na variavel cadastro
     this.cadastro = new FormGroup({
       nome: new FormControl('', Validators.required),
       email: new FormControl('', [Validators.email, Validators.required]),
-      crm: new FormControl('', [Validators.required, Validators.minLength(6)]),
-      especialidade: new FormControl('', Validators.required),
+      cre: new FormControl('', [Validators.required, Validators.minLength(6)]),
+      cpf: new FormControl('', Validators.required),
       telefone: new FormControl('', Validators.required),
       endereco: new FormGroup({
         complemento: new FormControl(''),
@@ -36,7 +32,6 @@ export class CadastroMedicosPage implements OnInit {
     })
    }
 
-   //função que envia dados do formulario para a função cadastrar do service
    onSubmit(cadastro : FormGroup) {
     console.log(JSON.stringify(this.cadastro.value))
     if(this.cadastro.valid){
@@ -46,7 +41,6 @@ export class CadastroMedicosPage implements OnInit {
       cadastro.reset()
         this.Alert()
         this.router.navigateByUrl('home')
-
     }else{
       this.AlertError()
     }

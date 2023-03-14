@@ -1,7 +1,7 @@
 <div class="container-lista">
   <a class="link" routerLink="/tabs/home" routerLinkActive="active" >
     <ion-icon class="seta" name="arrow-back"></ion-icon>
-    Lista de medicos
+    Lista de enfermeiros
   </a>
 
   <div class="container_busca">
@@ -18,7 +18,7 @@
         </ion-header>
         <ion-content style="--background: #fff; --color: #000;" class="ion-padding">
           <p style="font-size: 1.1em;" >Digite o nome do medico para realizar a busca</p>
-          <form method="post" (ngSubmit)="buscarMedico()">
+          <form method="post" (ngSubmit)="buscarEnfermeiro()">
             <div class="form-group">
               <ion-item class="inp" fill="outline">
                 <ion-label position="floating">Nome</ion-label>
@@ -37,13 +37,13 @@
                 <ion-col class="line_value">Nome</ion-col>
                 <ion-col class="line_value crm_value">CRM</ion-col>
               </ion-row>
-              <ng-container *ngIf="medicoBusca.length">
-                <ion-row style="background: #f2f2f2;" class="row2" *ngFor="let busca of medicoBusca">
+              <ng-container *ngIf="enfermeiroBusca.length">
+                <ion-row style="background: #f2f2f2;" class="row2" *ngFor="let busca of enfermeiroBusca">
                   <ion-col class="valor">{{ busca.nome }}</ion-col>
-                  <ion-col class="valor">{{ busca.crm }}</ion-col>
+                  <ion-col class="valor">{{ busca.cre }}</ion-col>
                 </ion-row>
               </ng-container>
-              <ng-container *ngIf="!medicoBusca.length">
+              <ng-container *ngIf="!enfermeiroBusca.length">
                 <ion-row>
                   <ion-col>Nenhum resultado encontrado</ion-col>
                 </ion-row>
@@ -62,9 +62,9 @@
         <ion-col class="line_value crm_value">CRM</ion-col>
       </ion-row>
       <div>
-        <ion-row class="row2" *ngFor="let medico of medicos">
-          <ion-col class="valor">{{ medico.nome }}</ion-col>
-          <ion-col class="valor">{{ medico.crm }}</ion-col>
+        <ion-row class="row2" *ngFor="let enfermeiro of enfermeiros">
+          <ion-col class="valor">{{ enfermeiro.nome }}</ion-col>
+          <ion-col class="valor">{{ enfermeiro.cre }}</ion-col>
         </ion-row>
       </div>
     </ion-grid>

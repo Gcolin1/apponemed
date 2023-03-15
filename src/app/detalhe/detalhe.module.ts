@@ -1,3 +1,5 @@
+import { HttpClientModule } from '@angular/common/http';
+import { DetalheService } from './detalhe.service';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -14,8 +16,10 @@ import { DetalhePage } from './detalhe.page';
     FormsModule,
     IonicModule,
     ReactiveFormsModule,
-    DetalhePageRoutingModule
+    DetalhePageRoutingModule,
+    HttpClientModule
   ],
+  providers: [DetalheService],
   declarations: [DetalhePage]
 })
 export class DetalhePageModule {}

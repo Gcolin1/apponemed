@@ -1,24 +1,69 @@
 <ion-content style="--background: #fff">
-  <a class="link" routerLink="/lista-medicos" routerLinkActive="active" >
-    <ion-icon class="seta" name="arrow-back"></ion-icon>
-    Lista de medicos
-  </a>
+  <div class="fundo-link">
+    <a class="link" routerLink="/lista-medicos" routerLinkActive="active" >
+      <ion-icon class="seta" name="arrow-back"></ion-icon>
+      Detalhes
+    </a>
+  </div>
 
   <div class="container_dados">
     <div class="fundo-dados" *ngFor="let medico of medicoDetalhe" >
-        <h2>Dados pessoais</h2>
-        <p>Nome: {{ medico.nome }}</p>
-        <p>E-mail: {{ medico.email }}</p>
-        <p>CRM: {{ medico.crm }}</p>
-        <p>Especialidade {{ medico.especialidade }}</p>
+        <div class="dados-pessoais">
+          <h2>Dados pessoais</h2>
+          <div>
+            <p><ion-icon name="person-outline"></ion-icon> {{ medico.nome }}</p>
+          </div>
 
-        <h2>Endereço</h2>
-        <p>Bairro: {{ medico.endereco.bairro }}</p>
-        <p>Logradouro: {{ medico.endereco.logradouro }}</p>
-        <p>Numero: {{ medico.endereco.numero }}</p>
-        <p>Cidade: {{ medico.endereco.cidade }}</p>
-        <p>UF: {{ medico.endereco.uf }}</p>
-        <p>Complemento: {{ medico.endereco.complemento }}</p>
+          <div>
+            <p><ion-icon name="mail-outline"></ion-icon> {{ medico.email }}</p>
+          </div>
+
+          <div>
+            <p><ion-icon name="newspaper-outline"></ion-icon> {{ medico.crm }}</p>
+          </div>
+
+          <div>
+            <p><ion-icon name="medkit-outline"></ion-icon> {{ medico.especialidade }}</p>
+          </div>
+        </div>
+
+        <div class="dados-endereco">
+          <h2>Endereço</h2>
+          <div>
+            <p>Bairro:  {{ medico.endereco.bairro }}</p>
+          </div>
+
+          <div>
+            <p>Logradouro:  {{ medico.endereco.logradouro }}</p>
+          </div>
+
+          <div>
+            <p>Numero:  {{ medico.endereco.numero }}</p>
+          </div>
+
+          <div>
+            <p>Cidade:  {{ medico.endereco.cidade }}</p>
+          </div>
+
+          <div>
+            <p>UF:  {{ medico.endereco.uf }}</p>
+          </div>
+
+          <div>
+            <p>Complemento:  {{ medico.endereco.complemento }}</p>
+          </div>
+        </div>
+
+        <div class="buttons">
+          <a class="btn_editar">
+            <ion-icon name="pencil-outline"></ion-icon> Editar
+          </a>
+
+          <a (click)="deletarMedicoId()" class="btn_excluir">
+            <ion-icon name="trash-outline"></ion-icon> Exluir
+          </a>
+
+        </div>
     </div>
   </div>
 </ion-content>

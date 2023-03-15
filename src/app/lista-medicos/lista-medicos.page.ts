@@ -1,3 +1,4 @@
+import { NavController, Platform } from '@ionic/angular';
 import { Router } from '@angular/router';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Medico } from '../Medico';
@@ -24,6 +25,7 @@ export class ListaMedicosPage implements OnInit {
 
   ngOnInit(){
     this.getAllMedicos()
+
   }
 
   redirecionarDetalhe(id : any){
@@ -36,8 +38,6 @@ export class ListaMedicosPage implements OnInit {
       console.log(this.medicos)
     })
   }
-
-
 
   buscarMedico() {
       this.service.buscarPorNome(this.nome).subscribe(resposta => {

@@ -21,7 +21,7 @@ export class CadastroMedicosPage implements OnInit {
     this.cadastro = new FormGroup({
       nome: new FormControl('', Validators.required),
       email: new FormControl('', [Validators.email, Validators.required]),
-      crm: new FormControl('', [Validators.required, Validators.minLength(6)]),
+      crm: new FormControl('', [Validators.required, Validators.minLength(6), Validators.maxLength(6)]),
       especialidade: new FormControl('', Validators.required),
       telefone: new FormControl('', Validators.required),
       endereco: new FormGroup({
@@ -45,7 +45,7 @@ export class CadastroMedicosPage implements OnInit {
       })
       cadastro.reset()
         this.Alert()
-        this.router.navigateByUrl('home')
+        //this.router.navigateByUrl('home')
 
     }else{
       this.AlertError()

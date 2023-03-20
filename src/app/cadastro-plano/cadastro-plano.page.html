@@ -1,0 +1,38 @@
+<ion-content>
+
+  <div class="container-cadastro">
+    <a class="link" routerLink="/tabs/home" routerLinkActive="active" >
+      <ion-icon class="seta" name="arrow-back"></ion-icon>
+      Cadastro de planos de saúde
+    </a>
+
+    <form method="post" [formGroup]="cadastro" (ngSubmit)="onSubmit(cadastro)">
+      <div class="form-group">
+        <ion-item class="inp" fill="outline">
+          <ion-label position="floating">Nome</ion-label>
+          <ion-input placeholder="Nome" type="text" formControlName="nome" name="nome" id="nome" ngModel required ></ion-input>
+        </ion-item>
+      </div>
+      <div class="form-group">
+        <ion-item class="inp" fill="outline">
+          <ion-label position="floating">CNPJ</ion-label>
+          <ion-input placeholder="CNPJ" type="cnpj" formControlName="cnpj" name="cnpj" id="cnpj" ngModel required email></ion-input>
+        </ion-item>
+      </div>
+      <div class="form-group">
+        <ion-item class="inp" fill="outline">
+          <ion-label position="floating">Telefone</ion-label>
+          <ion-input placeholder="Telefone" type="text" name="telefone" formControlName="telefone" id="telefone" ngModel required></ion-input>
+        </ion-item>
+      </div>
+      <div class="form-group">
+        <ion-item class="inp" fill="outline">
+          <ion-label position="floating">Coberturas</ion-label>
+          <ion-input placeholder="Coberturas" type="text" formControlName="coberturas" name="coberturas" id="coberturas" ngModel required></ion-input>
+        </ion-item>
+      </div>
+      <button class="btn" type="submit">Cadastrar</button>
+    </form>
+  </div>
+
+</ion-content>

@@ -12,30 +12,45 @@
           <ion-label position="floating">Nome</ion-label>
           <ion-input placeholder="Nome" type="text" formControlName="nome" name="nome" id="nome" ngModel required ></ion-input>
         </ion-item>
+        <div *ngIf="cadastro.get('nome')?.errors?.['required'] && cadastro.get('nome')?.touched">
+          Nome obrigatório
+      </div>
       </div>
       <div class="form-group">
         <ion-item class="inp" fill="outline">
           <ion-label position="floating">E-mail</ion-label>
           <ion-input placeholder="E-mail" type="email" formControlName="email" name="email" id="email" ngModel required email></ion-input>
         </ion-item>
+        <div *ngIf="cadastro.get('email')?.errors?.['required'] && cadastro.get('email')?.touched">
+          E-mail obrigatório
+      </div>
       </div>
       <div class="form-group">
         <ion-item class="inp" fill="outline">
           <ion-label position="floating">CRE</ion-label>
           <ion-input placeholder="cre" type="text" name="cre" id="cre" formControlName="cre" ngModel required></ion-input>
         </ion-item>
+        <div *ngIf="cadastro.get('cre')?.errors?.['required'] && cadastro.get('cre')?.touched">
+          CRE obrigatório
+      </div>
       </div>
       <div class="form-group">
         <ion-item class="inp" fill="outline">
           <ion-label position="floating">Telefone</ion-label>
           <ion-input placeholder="Telefone" type="text" name="telefone" formControlName="telefone" id="telefone" ngModel required></ion-input>
         </ion-item>
+        <div *ngIf="cadastro.get('telefone')?.errors?.['required'] && cadastro.get('telefone')?.touched">
+          Telefone obrigatório
+      </div>
       </div>
       <div class="form-group">
         <ion-item class="inp" fill="outline">
           <ion-label position="floating">CPF</ion-label>
           <ion-input placeholder="CPF" type="text" formControlName="cpf" name="cpf" id="cpf" ngModel required></ion-input>
         </ion-item>
+        <div *ngIf="cadastro.get('cpf')?.errors?.['required'] && cadastro.get('cpf')?.touched">
+          CPF obrigatório
+      </div>
       </div>
       <h3>Endereço</h3>
       <div formGroupName="endereco">

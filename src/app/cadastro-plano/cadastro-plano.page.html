@@ -12,24 +12,36 @@
           <ion-label position="floating">Nome</ion-label>
           <ion-input placeholder="Nome" type="text" formControlName="nome" name="nome" id="nome" ngModel required ></ion-input>
         </ion-item>
+        <div *ngIf="cadastro.get('nome')?.errors?.['required'] && cadastro.get('nome')?.touched">
+          Nome obrigatório
+      </div>
       </div>
       <div class="form-group">
         <ion-item class="inp" fill="outline">
           <ion-label position="floating">CNPJ</ion-label>
           <ion-input placeholder="CNPJ" type="cnpj" formControlName="cnpj" name="cnpj" id="cnpj" ngModel required email></ion-input>
         </ion-item>
+        <div *ngIf="cadastro.get('cnpj')?.errors?.['required'] && cadastro.get('cnpj')?.touched">
+          CNPJ obrigatório
+      </div>
       </div>
       <div class="form-group">
         <ion-item class="inp" fill="outline">
           <ion-label position="floating">Telefone</ion-label>
           <ion-input placeholder="Telefone" type="text" name="telefone" formControlName="telefone" id="telefone" ngModel required></ion-input>
         </ion-item>
+        <div *ngIf="cadastro.get('telefone')?.errors?.['required'] && cadastro.get('telefone')?.touched">
+          Telefone obrigatório
+      </div>
       </div>
       <div class="form-group">
         <ion-item class="inp" fill="outline">
           <ion-label position="floating">Coberturas</ion-label>
           <ion-input placeholder="Coberturas" type="text" formControlName="coberturas" name="coberturas" id="coberturas" ngModel required></ion-input>
         </ion-item>
+        <div *ngIf="cadastro.get('coberturas')?.errors?.['required'] && cadastro.get('coberturas')?.touched">
+          Cobertura obrigatório
+      </div>
       </div>
       <button class="btn" type="submit">Cadastrar</button>
     </form>

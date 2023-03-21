@@ -10,18 +10,27 @@
         <ion-label position="floating">Nome</ion-label>
         <ion-input placeholder="Nome" type="text" formControlName="nome" name="nome" id="nome" ngModel required ></ion-input>
       </ion-item>
+      <div *ngIf="cadastro.get('nome')?.errors?.['required'] && cadastro.get('nome')?.touched">
+        Nome obrigatório
+    </div>
     </div>
     <div class="form-group">
       <ion-item class="inp" fill="outline">
         <ion-label position="floating">E-mail</ion-label>
         <ion-input placeholder="E-mail" type="email" formControlName="email" name="email" id="email" ngModel required email></ion-input>
       </ion-item>
+      <div *ngIf="cadastro.get('email')?.errors?.['required'] && cadastro.get('email')?.touched">
+        E-mail obrigatório
+    </div>
     </div>
     <div class="form-group">
       <ion-item class="inp" fill="outline">
         <ion-label position="floating">CPF</ion-label>
         <ion-input placeholder="cpf" type="text" name="cpf" id="cpf" formControlName="cpf" ngModel required></ion-input>
       </ion-item>
+      <div *ngIf="cadastro.get('cpf')?.errors?.['required'] && cadastro.get('cpf')?.touched">
+        CPF obrigatório
+    </div>
     </div>
     <h3>Endereço</h3>
     <div formGroupName="endereco">

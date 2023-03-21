@@ -1,6 +1,7 @@
 import { Router } from '@angular/router';
 import { CadastroMedicoService } from './cadastro-medico.service';
 import { Component, OnInit } from '@angular/core';
+import { AbstractControl } from "@angular/forms";
 
 import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
 import { AlertController } from '@ionic/angular';

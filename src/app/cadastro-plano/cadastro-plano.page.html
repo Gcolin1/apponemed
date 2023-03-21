@@ -19,7 +19,7 @@
       <div class="form-group">
         <ion-item class="inp" fill="outline">
           <ion-label position="floating">CNPJ</ion-label>
-          <ion-input placeholder="CNPJ" type="cnpj" formControlName="cnpj" name="cnpj" id="cnpj" ngModel required email></ion-input>
+          <ion-input placeholder="CNPJ" type="text" formControlName="cnpj" name="cnpj" id="cnpj" ngModel required></ion-input>
         </ion-item>
         <div *ngIf="cadastro.get('cnpj')?.errors?.['required'] && cadastro.get('cnpj')?.touched">
           CNPJ obrigatório

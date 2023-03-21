@@ -23,7 +23,7 @@
         </ion-item>
         <div *ngIf="cadastro.get('email')?.errors?.['required'] && cadastro.get('email')?.touched">
           E-mail obrigatório
-      </div>
+        </div>
       </div>
       <div class="form-group">
         <ion-item class="inp" fill="outline">
@@ -95,7 +95,7 @@
             <ion-label position="floating">UF</ion-label>
             <ion-input placeholder="UF" type="text" name="uf" id="uf"  formControlName="uf" ngModel required></ion-input>
           </ion-item>
-        </div>  
+        </div>
       </div>
       <button class="btn" type="submit">Cadastrar</button>
     </form>

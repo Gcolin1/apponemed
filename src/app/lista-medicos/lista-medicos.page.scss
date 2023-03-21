@@ -27,6 +27,32 @@
       margin-bottom: 30px;
     }
 
+    .buttons{
+      display: flex;
+      justify-content: center;
+    }
+
+    .btnBuscar,
+    .btnLimpar{
+      padding: 15px 30px;
+      font-weight: bold;
+      font-size: 1.2em;
+      border-radius: 10px;
+      margin: 20px 10px;
+      flex-direction: row;
+      justify-content: center;
+    }
+
+    .inp{
+      width: 300px;
+      margin-left: 30px;
+    }
+
+    .frm{
+      margin-bottom: 40px;
+      margin-top: 20px;
+    }
+
     .link{
         text-decoration: none;
         color: #fff;

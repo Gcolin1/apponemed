@@ -68,7 +68,6 @@ export class DetalhePage implements OnInit {
             this.detalheService.DeletarMedicoId(this.id).subscribe((res) => {
               console.log(res)
               this.Alert()
-              window.location.reload();
               this.navCtrl.navigateForward('/lista-medicos');
             })
           }

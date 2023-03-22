@@ -3,38 +3,35 @@
     <ion-icon class="seta" name="arrow-back"></ion-icon>
     Lista de enfermeiros
   </a>
+
   <div padding>
-    <form method="post" (ngSubmit)="buscarEnfermeiro()">
+    <form class="frm" method="post" (ngSubmit)="buscarEnfermeiro()">
       <div class="form-group">
         <ion-item class="inp" fill="outline">
           <ion-label position="floating">Nome</ion-label>
-          <ion-input placeholder="Nome" type="text" name="nome" id="nome" [(ngModel)]="nome " required ></ion-input>
+          <ion-input class="inp" placeholder="Nome" type="text" name="nome" id="nome" [(ngModel)]="nome " required ></ion-input>
         </ion-item>
       </div>
-      <button style="background: #073A79; color: #fff; padding: 10px 20px; margin: 30px 0; margin-left: 5px; font-size: 1em; border-radius: 5px;" class="btnBuscar" type="submit">
-        Buscar
-      </button>
-      <button style="background: #4e4e4e; color: #fff; padding: 10px 20px; margin: 30px 0; margin-left: 30px; font-size: 1em; border-radius: 5px;" (click)="LimparTabela()">Limpar</button>
-    </form>
-    <ion-grid class="table">
-      <ion-row class="table-line">
-        <ion-col class="line_value">Nome</ion-col>
-        <ion-col class="line_value crm_value">CRM</ion-col>
-      </ion-row>
-      <div>
-        <ng-container *ngIf="enfermeiroBusca.length">
-          <ion-row style="background: #f2f2f2;" class="row2" *ngFor="let busca of enfermeiroBusca">
-            <ion-col class="valor">{{ busca.nome }}</ion-col>
-            <ion-col class="valor">{{ busca.cre }}</ion-col>
-          </ion-row>
-        </ng-container>
-        <ng-container *ngIf="!enfermeiroBusca.length">
-          <ion-row class="row2" *ngFor="let enfermeiro of enfermeiros">
-            <ion-col class="valor">{{ enfermeiro.nome }}</ion-col>
-            <ion-col class="valor">{{ enfermeiro.cre }}</ion-col>
-          </ion-row>
-        </ng-container>
+      <div class="buttons">
+        <button class="btnBuscar">
+          Buscar
+        </button>
+        <button class="btnLimpar">Limpar</button>
       </div>
-    </ion-grid>
+    </form>
+
+    <ng-container *ngIf="enfermeiroBusca.length">
+      <ion-row style="background: #f2f2f2;" class="row" *ngFor="let busca of enfermeiroBusca">
+        <ion-col class="valor">{{ busca.nome }}</ion-col>
+        <ion-col class="valor">{{ busca.cre }}</ion-col>
+      </ion-row>
+    </ng-container>
+    <ng-container *ngIf="!enfermeiroBusca.length">
+      <ion-row class="row" *ngFor="let enfermeiro of enfermeiros">
+        <ion-col class="valor">{{ enfermeiro.nome }}</ion-col>
+        <ion-col class="valor">{{ enfermeiro.cre }}</ion-col>
+      </ion-row>
+    </ng-container>
+
   </div>
 </div>

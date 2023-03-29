@@ -1,0 +1,114 @@
+.fundo-link{
+    background: linear-gradient(to bottom, #073A79, #1571E3);
+    height: 120px;
+    border-radius: 0 0 70px 70px;
+    display: flex;
+    padding-top: 40px;
+    margin-bottom: 30px;
+
+
+  .link{
+    text-decoration: none;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 50px;
+    margin-left: 20px;
+
+    .seta{
+        margin-right: 80px;
+        font-size: 1em;
+    }
+  }
+}
+
+.dados-pessoais{
+
+  h2{
+    font-weight: bold;
+    text-align: center;
+    color: #073A79;
+  }
+
+  div{
+    border-bottom: solid #1571E3 2px;
+    padding: 10px 10px;
+    display: flex;
+    align-items: center;
+
+    p{
+      display: flex;
+      font-size: 1em;
+      font-weight: bold;
+      align-items: center;
+
+      ion-icon{
+        margin-right: 30px;
+        margin-left: 20px;
+        font-size: 1.5em;
+        color: #1571E3;
+      }
+    }
+  }
+}
+
+.dados-endereco{
+
+  margin-top: 50px;
+
+  h2{
+    font-weight: bold;
+    text-align: center;
+    color: #073A79;
+    margin-bottom: 20px;
+  }
+
+  div{
+    border-bottom: solid #1571E3 2px;
+    padding: 10px 10px;
+    display: flex;
+    align-items: center;
+
+    p{
+      display: flex;
+      color: #073A79;
+      font-size: 1em;
+      font-weight: bold;
+      align-items: center;
+      margin-left: 40px;
+      font-size: 1.1em;
+    }
+  }
+}
+
+.buttons{
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+
+  ion-icon{
+    font-size: 1.5em;
+  }
+
+  a{
+    margin: 0 10px;
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.1em;
+    display: flex;
+    align-items: center;
+    padding: 15px 30px;
+    border-radius: 20px;
+  }
+
+  .btn_editar{
+    background-color: #1db100;
+  }
+
+  .btn_excluir{
+    background-color: #b10000;
+  }
+}

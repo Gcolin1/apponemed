@@ -21,4 +21,9 @@ export class ListaEnfermeirosService{
     return this.http.get<any>(`${this.urlApi}/buscar?nome=${nome}`)
   }
 
+  buscarEnfermeiroId(id : any){
+    return this.http.get<any>(`${this.urlApi}/${id}`)
+  }
+
+
 }

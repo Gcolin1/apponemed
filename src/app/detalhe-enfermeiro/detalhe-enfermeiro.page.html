@@ -1,0 +1,64 @@
+<ion-content style="--background: #fff">
+  <div class="fundo-link">
+    <a class="link" routerLink="/lista-enfermeiros" routerLinkActive="active" >
+      <ion-icon class="seta" name="arrow-back"></ion-icon>
+      Detalhes
+    </a>
+  </div>
+
+  <div class="container_dados">
+    <div class="fundo-dados" *ngFor="let enfermeiros of enfermeirosDetalhe" >
+        <div class="dados-pessoais">
+          <h2>Dados pessoais</h2>
+          <div>
+            <p><ion-icon name="person-outline"></ion-icon> {{ enfermeiros.nome }}</p>
+          </div>
+
+          <div>
+            <p><ion-icon name="mail-outline"></ion-icon> {{ enfermeiros.email }}</p>
+          </div>
+
+          <div>
+            <p><ion-icon name="newspaper-outline"></ion-icon> {{ enfermeiros.cre }}</p>
+          </div>
+
+        <div class="dados-endereco">
+          <h2>Endereço</h2>
+          <div>
+            <p>Bairro:  {{ enfermeiros.endereco.bairro }}</p>
+          </div>
+
+          <div>
+            <p>Logradouro:  {{ enfermeiros.endereco.logradouro }}</p>
+          </div>
+
+          <div>
+            <p>Numero:  {{ enfermeiros.endereco.numero }}</p>
+          </div>
+
+          <div>
+            <p>Cidade:  {{ enfermeiros.endereco.cidade }}</p>
+          </div>
+
+          <div>
+            <p>UF:  {{ enfermeiros.endereco.uf }}</p>
+          </div>
+
+          <div>
+            <p>Complemento:  {{ enfermeiros.endereco.complemento }}</p>
+          </div>
+        </div>
+
+        <div class="buttons">
+          <a class="btn_editar">
+            <ion-icon name="pencil-outline"></ion-icon> Editar
+          </a>
+
+          <a (click)="deletarMedicoId()" class="btn_excluir">
+            <ion-icon name="trash-outline"></ion-icon> Exluir
+          </a>
+
+        </div>
+    </div>
+  </div>
+</ion-content>

@@ -25,7 +25,6 @@ export class ListaMedicosPage implements OnInit {
 
   ngOnInit(){
     this.getAllMedicos()
-
   }
 
   redirecionarDetalhe(id : any){

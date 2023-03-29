@@ -50,6 +50,8 @@ export class DetalhePage implements OnInit {
     })
   }
 
+  
+
   async deletarMedicoId(){
     const alertc = await this.alert.create({
       header: 'Confirmação',

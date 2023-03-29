@@ -49,6 +49,14 @@ const routes: Routes = [
     path: 'cadastro-plano',
     loadChildren: () => import('./cadastro-plano/cadastro-plano.module').then( m => m.CadastroPlanoPageModule)
   },
+  {
+    path: 'lista-planos',
+    loadChildren: () => import('./lista-planos/lista-planos.module').then( m => m.ListaPlanosPageModule)
+  },
+  {
+    path: 'agendar',
+    loadChildren: () => import('./agendar/agendar.module').then( m => m.AgendarPageModule)
+  },
 
 
 

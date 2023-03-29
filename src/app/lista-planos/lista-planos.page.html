@@ -2,12 +2,12 @@
   <div class="fundo-link">
     <a class="link" routerLink="/tabs/home" routerLinkActive="active" >
       <ion-icon class="seta" name="arrow-back"></ion-icon>
-      Lista de medicos
+      Lista de planos de saúde
     </a>
   </div>
 
   <div padding>
-    <form class="frm" method="post" (ngSubmit)="buscarMedico()">
+    <form class="frm" method="post" (ngSubmit)="buscarPlanos()">
       <div class="form-group">
         <ion-item class="inp" fill="outline">
           <ion-label position="floating">Nome</ion-label>
@@ -22,19 +22,19 @@
       </div>
     </form>
 
-    <ng-container *ngIf="medicoBusca.length">
+    <ng-container *ngIf="planoBusca.length">
       <div padding class="container_dados">
-        <ion-row class="row" (click)="redirecionarDetalhe(busca.id)" *ngFor="let busca of medicoBusca">
+        <ion-row class="row" (click)="redirecionarDetalhe(busca.id)" *ngFor="let busca of planoBusca">
           <ion-col>{{ busca.nome }}</ion-col>
-          <ion-col>{{ busca.crm }}</ion-col>
+          <ion-col>{{ busca.cnpj }}</ion-col>
         </ion-row>
       </div>
     </ng-container>
-    <ng-container *ngIf="!medicoBusca.length">
+    <ng-container *ngIf="!planoBusca.length">
       <div padding class="container_dados">
-        <ion-row class="row" (click)="redirecionarDetalhe(medico.id)" *ngFor="let medico of medicos">
-          <ion-col>{{ medico.nome }}</ion-col>
-          <ion-col>{{ medico.crm }}</ion-col>
+        <ion-row class="row" (click)="redirecionarDetalhe(plano.id)" *ngFor="let plano of planos">
+          <ion-col>{{ plano.nome }}</ion-col>
+          <ion-col>{{ plano.cnpj }}</ion-col>
         </ion-row>
     </div>
     </ng-container>
@@ -42,3 +42,4 @@
 
 
 </div>
+

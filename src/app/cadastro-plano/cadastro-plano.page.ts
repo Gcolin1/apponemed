@@ -2,7 +2,7 @@ import { Router } from '@angular/router';
 import { CadastroPlanoService } from './cadastro-plano.service';
 import { Component, OnInit } from '@angular/core';
 
-import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
+import { FormGroup, Validators, FormControl } from '@angular/forms';
 import { AlertController } from '@ionic/angular';
 
 @Component({
@@ -15,7 +15,7 @@ export class CadastroPlanoPage implements OnInit {
   cadastro: FormGroup;
 
   constructor(private service : CadastroPlanoService, private alertController: AlertController, private router : Router) {
-  
+
     this.cadastro = new FormGroup({
       nome: new FormControl('', Validators.required),
       cnpj: new FormControl('', [Validators.required, Validators.minLength(14), Validators.maxLength(14)]),
@@ -61,6 +61,6 @@ export class CadastroPlanoPage implements OnInit {
   ngOnInit() {
 
   }
-   
+
 
 }

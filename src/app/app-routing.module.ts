@@ -50,8 +50,17 @@ const routes: Routes = [
     loadChildren: () => import('./cadastro-plano/cadastro-plano.module').then( m => m.CadastroPlanoPageModule)
   },
   {
+<<<<<<< HEAD
     path: 'detalhe-enfermeiro',
     loadChildren: () => import('./detalhe-enfermeiro/detalhe-enfermeiro.module').then( m => m.DetalheEnfermeiroPageModule)
+=======
+    path: 'lista-planos',
+    loadChildren: () => import('./lista-planos/lista-planos.module').then( m => m.ListaPlanosPageModule)
+  },
+  {
+    path: 'agendar',
+    loadChildren: () => import('./agendar/agendar.module').then( m => m.AgendarPageModule)
+>>>>>>> 1154da322a1e747494adffac1f68dd6097ddc58f
   },
 
 

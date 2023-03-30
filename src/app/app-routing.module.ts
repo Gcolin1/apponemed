@@ -45,11 +45,16 @@ const routes: Routes = [
   {
     path: 'detalhe/:id',
     loadChildren: () => import('./detalhe/detalhe.module').then( m => m.DetalhePageModule)
-  },  {
+  },
+  {
     path: 'cadastro-plano',
     loadChildren: () => import('./cadastro-plano/cadastro-plano.module').then( m => m.CadastroPlanoPageModule)
   },
   {
+    path: 'detalhe-enfermeiro/:id',
+    loadChildren: () => import('./detalhe-enfermeiro/detalhe-enfermeiro.module').then( m => m.DetalheEnfermeiroPageModule)
+  },
+  {  
     path: 'lista-planos',
     loadChildren: () => import('./lista-planos/lista-planos.module').then( m => m.ListaPlanosPageModule)
   },
@@ -57,8 +62,6 @@ const routes: Routes = [
     path: 'agendar',
     loadChildren: () => import('./agendar/agendar.module').then( m => m.AgendarPageModule)
   },
-
-
 
 ];
 @NgModule({

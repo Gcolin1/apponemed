@@ -21,13 +21,13 @@
     </form>
 
     <ng-container *ngIf="enfermeiroBusca.length">
-      <ion-row style="background: #f2f2f2;" class="row" *ngFor="let busca of enfermeiroBusca">
+      <ion-row (click)="redirecionarDetalhe(busca.id)" style="background: #f2f2f2;" class="row" *ngFor="let busca of enfermeiroBusca">
         <ion-col class="valor">{{ busca.nome }}</ion-col>
         <ion-col class="valor">{{ busca.cre }}</ion-col>
       </ion-row>
     </ng-container>
     <ng-container *ngIf="!enfermeiroBusca.length">
-      <ion-row class="row" *ngFor="let enfermeiro of enfermeiros">
+      <ion-row (click)="redirecionarDetalhe(enfermeiro.id)" class="row" *ngFor="let enfermeiro of enfermeiros">
         <ion-col class="valor">{{ enfermeiro.nome }}</ion-col>
         <ion-col class="valor">{{ enfermeiro.cre }}</ion-col>
       </ion-row>

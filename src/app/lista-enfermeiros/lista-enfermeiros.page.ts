@@ -1,6 +1,7 @@
 import { Enfermeiro } from './../Enfermeiro';
 import { ListaEnfermeirosService } from './lista-enfermeiros.service';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-lista-enfermeiros',
@@ -20,7 +21,7 @@ export class ListaEnfermeirosPage implements OnInit {
   }
 
 
-  constructor(private service : ListaEnfermeirosService) { }
+  constructor(private service : ListaEnfermeirosService, private router : Router) { }
 
 
   ngOnInit() {
@@ -32,6 +33,10 @@ export class ListaEnfermeirosPage implements OnInit {
       this.enfermeiros = res.content
       console.log(this.enfermeiros)
     })
+  }
+
+  redirecionarDetalhe(id : any){
+    this.router.navigateByUrl(`detalhe-enfermeiro/${id}`);
   }
 
   buscarEnfermeiro() {

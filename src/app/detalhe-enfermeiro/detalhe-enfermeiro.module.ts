@@ -1,5 +1,5 @@
 import { HttpClientModule } from '@angular/common/http';
-import { DetalheEnfermeiroService } from './detalheEnfermeiro.service';
+import { DetalheEnfermeiroService } from './detalhe-enfermeiro.service';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -16,6 +16,7 @@ import { DetalheEnfermeiroPage } from './detalhe-enfermeiro.page';
     FormsModule,
     IonicModule,
     ReactiveFormsModule,
+    HttpClientModule,
     DetalheEnfermeiroPageRoutingModule
   ],
   providers: [DetalheEnfermeiroService],

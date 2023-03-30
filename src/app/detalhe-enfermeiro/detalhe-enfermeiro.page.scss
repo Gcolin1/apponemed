@@ -35,7 +35,6 @@
   div{
     border-bottom: solid #1571E3 2px;
     padding: 10px 10px;
-    display: flex;
     align-items: center;
 
     p{
@@ -69,6 +68,7 @@
     border-bottom: solid #1571E3 2px;
     padding: 10px 10px;
     display: flex;
+    flex-direction: column;
     align-items: center;
 
     p{

@@ -7,7 +7,7 @@
   </div>
 
   <div class="container_dados">
-    <div class="fundo-dados" *ngFor="let enfermeiros of enfermeirosDetalhe" >
+    <div class="fundo-dados" *ngFor="let enfermeiros of enfermeiroDetalhe" >
         <div class="dados-pessoais">
           <h2>Dados pessoais</h2>
           <div>
@@ -48,16 +48,16 @@
             <p>Complemento:  {{ enfermeiros.endereco.complemento }}</p>
           </div>
         </div>
+        </div>
 
         <div class="buttons">
           <a class="btn_editar">
             <ion-icon name="pencil-outline"></ion-icon> Editar
           </a>
 
-          <a (click)="deletarMedicoId()" class="btn_excluir">
+          <a (click)="deletarEnfermeiroId()" class="btn_excluir">
             <ion-icon name="trash-outline"></ion-icon> Exluir
           </a>
-
         </div>
     </div>
   </div>

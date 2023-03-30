@@ -5,11 +5,9 @@ import { HttpClient } from "@angular/common/http";
   providedIn: 'root'
 })
 
-export class CadastroEnfermeirosService{
+export class AgendarService{
 
-  urlApi = 'http://localhost:8080/enfermeiros'
-
-  //urlApiAdvpl = 'http://localhost:8080/api/onemed/v1/enfermeiro'
+  urlApi = 'http://localhost:8080/atendimento'
 
   constructor(private http: HttpClient) { }
 
@@ -18,4 +16,5 @@ export class CadastroEnfermeirosService{
   }
 
 }
+
 

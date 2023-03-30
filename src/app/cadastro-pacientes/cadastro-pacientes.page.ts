@@ -41,7 +41,7 @@ export class CadastroPacientesPage implements OnInit {
       })
       cadastro.reset()
       this.Alert()
-      this.router.navigateByUrl('home')
+      this.router.navigateByUrl('/tabs/home')
     }else{
       this.AlertError()
     }

@@ -32,6 +32,7 @@ export class CadastroPlanoPage implements OnInit {
       })
       cadastro.reset()
         this.Alert()
+        this.router.navigateByUrl('/tabs/home')
 
     }else{
       this.AlertError()

@@ -46,7 +46,7 @@ export class CadastroMedicosPage implements OnInit {
       })
       cadastro.reset()
         this.Alert()
-        //this.router.navigateByUrl('home')
+        this.router.navigateByUrl('home')
 
     }else{
       this.AlertError()

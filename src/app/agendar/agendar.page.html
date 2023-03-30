@@ -1,9 +1,59 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>agendar</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content>
 
+  <div class="container-cadastro">
+    <a class="link" routerLink="/tabs/home" routerLinkActive="active" >
+      <ion-icon class="seta" name="arrow-back"></ion-icon>
+      Agendar consulta
+    </a>
+
+    <form method="post" [formGroup]="agendamento" (ngSubmit)="onSubmit(agendamento)">
+      <div class="form-group">
+        <ion-item class="inp" fill="outline">
+          <ion-label position="floating">Nome</ion-label>
+          <ion-input placeholder="Paciente" type="text" formControlName="paciente" name="paciente" id="paciente" ngModel required ></ion-input>
+        </ion-item>
+        <div *ngIf="agendamento.get('paciente')?.errors?.['required'] && agendamento.get('paciente')?.touched">
+          Paciente obrigatório
+      </div>
+      </div>
+      <div class="form-group">
+        <ion-item class="inp" fill="outline">
+          <ion-label position="floating">Data</ion-label>
+          <ion-input placeholder="Data" type="date" formControlName="data" name="data" id="data" ngModel required></ion-input>
+        </ion-item>
+        <div *ngIf="agendamento.get('data')?.errors?.['required'] && agendamento.get('data')?.touched">
+          Data obrigatório
+        </div>
+      </div>
+      <div class="form-group">
+        <ion-item class="inp" fill="outline">
+          <ion-label position="floating">Horário</ion-label>
+          <ion-input placeholder="horario" type="time" name="horario" id="horario" formControlName="horario" ngModel required></ion-input>
+        </ion-item>
+        <div *ngIf="agendamento.get('horario')?.errors?.['required'] && agendamento.get('horario')?.touched">
+          Horário obrigatório
+      </div>
+      </div>
+      <div class="form-group">
+        <ion-item class="inp" fill="outline">
+          <ion-label position="floating">Descrição</ion-label>
+          <ion-input placeholder="descricao" type="text" name="descricao" formControlName="descricao" id="descricao" ngModel required></ion-input>
+        </ion-item>
+        <div *ngIf="agendamento.get('descricao')?.errors?.['required'] && agendamento.get('descricao')?.touched">
+          Descrição obrigatório
+      </div>
+      </div>
+      <div class="form-group">
+        <ion-item class="inp" fill="outline">
+          <ion-label position="floating">Especialidade</ion-label>
+          <ion-input placeholder="Especialidade" type="text" formControlName="especialidade" name="especialidade" id="especialidade" ngModel required></ion-input>
+        </ion-item>
+        <div *ngIf="agendamento.get('especialidade')?.errors?.['required'] && agendamento.get('especialidade')?.touched">
+          Especialidade obrigatório
+        </div>
+      </div>
+
+      <button class="btn" type="submit">Cadastrar</button>
+    </form>
+  </div>
 </ion-content>

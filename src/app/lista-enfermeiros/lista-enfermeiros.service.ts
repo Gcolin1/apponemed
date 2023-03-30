@@ -11,6 +11,8 @@ export class ListaEnfermeirosService{
 
   private urlApi = "http://localhost:8080/enfermeiros"
 
+  //private urlApiAdvpl = "http://localhost:8080/api/onemed/v1/enfermeiro"
+
   constructor(private http : HttpClient) { }
 
   getEnfermeiros(){

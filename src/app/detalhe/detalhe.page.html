@@ -6,6 +6,114 @@
     </a>
   </div>
 
+  <ion-modal [isOpen]="isModalOpen">
+    <ng-template>
+      <ion-header>
+        <ion-toolbar>
+          <ion-title>Editar dados</ion-title>
+          <ion-buttons slot="end">
+            <ion-button (click)="setOpen(false)">Close</ion-button>
+          </ion-buttons>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content >
+        <form class="container-modal" *ngFor="let medico of medicoDetalhe" method="post" [formGroup]="atualizar" (ngSubmit)="onSubmit(atualizar)">
+          <div class="form-group">
+            <ion-item class="inp" fill="outline">
+              <ion-label position="floating">Nome</ion-label> 
+              <ion-input placeholder="Nome" type="text" formControlName="nome" name="nome" id="nome" ngModel required ></ion-input>
+            </ion-item>
+            <div *ngIf="atualizar.get('nome')?.errors?.['required'] && atualizar.get('nome')?.touched">
+              Nome obrigatório
+          </div>
+          </div>
+          <div class="form-group">
+            <ion-item class="inp" fill="outline">
+              <ion-label position="floating">E-mail</ion-label>
+              <ion-input placeholder="E-mail" type="email" formControlName="email" name="email" id="email" ngModel required email></ion-input>
+            </ion-item>
+            <div *ngIf="atualizar.get('email')?.errors?.['required'] && atualizar.get('email')?.touched">
+              E-mail obrigatório
+            </div>
+          </div>
+          <div class="form-group">
+            <ion-item class="inp" fill="outline">
+              <ion-label position="floating">CRM</ion-label>
+              <ion-input placeholder="crm" type="text" name="crm" id="crm" formControlName="crm" ngModel required></ion-input>
+            </ion-item>
+            <div *ngIf="atualizar.get('crm')?.errors?.['required'] && atualizar.get('crm')?.touched">
+              CRM obrigatório
+          </div>
+          </div>
+          <div class="form-group">
+            <ion-item class="inp" fill="outline">
+              <ion-label position="floating">Telefone</ion-label>
+              <ion-input placeholder="Telefone" type="text" name="telefone" formControlName="telefone" id="telefone" ngModel required></ion-input>
+            </ion-item>
+            <div *ngIf="atualizar.get('telefone')?.errors?.['required'] && atualizar.get('telefone')?.touched">
+              Telefone obrigatório
+          </div>
+          </div>
+          <div class="form-group">
+            <ion-item class="inp" fill="outline">
+              <ion-label position="floating">Especialidade</ion-label>
+              <ion-input placeholder="Especialidade" type="text" formControlName="especialidade" name="especialidade" id="especialidade" ngModel required></ion-input>
+            </ion-item>
+            <div *ngIf="atualizar.get('especialidade')?.errors?.['required'] && atualizar.get('especialidade')?.touched">
+              Especialidade obrigatório
+          </div>
+          </div>
+          <h3>Endereço</h3>
+          <div formGroupName="endereco">
+            <div class="form-group">
+              <ion-item class="inp" fill="outline">
+                <ion-label position="floating">CEP</ion-label>
+                <ion-input placeholder="CEP" type="text" name="cep" id="cep" formControlName="cep" ngModel required></ion-input>
+              </ion-item>
+            </div>
+            <div class="form-group">
+              <ion-item class="inp"  fill="outline">
+                <ion-label position="floating">Logradouro</ion-label>
+                <ion-input placeholder="Logradouro" type="text" name="logradouro" formControlName="logradouro" id="logradouro" ngModel required></ion-input>
+              </ion-item>
+            </div>
+            <div class="form-group">
+              <ion-item class="inp" fill="outline">
+                <ion-label position="floating">Numero</ion-label>
+                <ion-input placeholder="Numero" type="text" name="numero" id="numero" formControlName="numero" ngModel required></ion-input>
+              </ion-item>
+            </div>
+            <div class="form-group">
+              <ion-item class="inp" fill="outline">
+                <ion-label position="floating">Complemento</ion-label>
+                <ion-input placeholder="Complemento" type="text" formControlName="complemento" name="Complemento" id="complemento" ngModel required></ion-input>
+              </ion-item>
+            </div>
+            <div class="form-group">
+              <ion-item class="inp" fill="outline">
+                <ion-label position="floating">Cidade</ion-label>
+                <ion-input placeholder="Cidade" type="text" name="cidade" id="cidade" formControlName="cidade" ngModel required></ion-input>
+              </ion-item>
+            </div>
+            <div class="form-group">
+              <ion-item class="inp" fill="outline">
+                <ion-label position="floating">Bairro</ion-label>
+                <ion-input placeholder="Bairro" type="text" name="bairro" id="bairro" formControlName="bairro" ngModel required></ion-input>
+              </ion-item>
+            </div>
+            <div class="form-group">
+              <ion-item class="inp" fill="outline">
+                <ion-label position="floating">UF</ion-label>
+                <ion-input placeholder="UF" type="text" name="uf" id="uf"  formControlName="uf" ngModel required></ion-input>
+              </ion-item>
+            </div>
+          </div>
+          <button class="btn" type="submit">Atualizar</button>
+        </form>
+      </ion-content>
+    </ng-template>
+  </ion-modal>
+
   <div class="container_dados">
     <div class="fundo-dados" *ngFor="let medico of medicoDetalhe" >
         <div class="dados-pessoais">
@@ -55,7 +163,7 @@
         </div>
 
         <div class="buttons">
-          <a class="btn_editar">
+          <a class="btn_editar" (click)="setOpen(true)">
             <ion-icon name="pencil-outline"></ion-icon> Editar
           </a>
 

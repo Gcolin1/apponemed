@@ -16,4 +16,8 @@ export class DetalheService{
     return this.http.delete(`${this.urlApi}/${id}`)
   }
 
+  editar(atualizar: any, id: any){
+    return this.http.put(`${this.urlApi}/${id}`, atualizar)
+  }
+
 }

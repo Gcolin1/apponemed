@@ -3,6 +3,7 @@ export interface Medico{
     crm: string
     email: string
     especialidade: string
+    telefone: string
     nome: string
     endereco: {
       logradouro: string

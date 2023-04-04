@@ -44,10 +44,16 @@
       </div>
       </div>
       <div class="form-group">
-        <ion-item class="inp" fill="outline">
-          <ion-label position="floating">Especialidade</ion-label>
-          <ion-input placeholder="Especialidade" type="text" formControlName="especialidade" name="especialidade" id="especialidade" ngModel required></ion-input>
+
+        <ion-item class="inp-select">
+          <ion-select aria-label="Fruit" interface="popover" formControlName="especialidade" placeholder="Especialidade">
+            <ion-select-option value="CARDIOLOGIA">CARDIOLOGIA</ion-select-option>
+            <ion-select-option value="ORTOPEDIA">ORTOPEDIA</ion-select-option>
+            <ion-select-option value="GINECOLOGIA">GINECOLOGIA</ion-select-option>
+            <ion-select-option value="DERMATOLOGIA">DERMATOLOGIA</ion-select-option>
+          </ion-select>
         </ion-item>
+
         <div *ngIf="cadastro.get('especialidade')?.errors?.['required'] && cadastro.get('especialidade')?.touched">
           Especialidade obrigatório
       </div>

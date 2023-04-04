@@ -21,7 +21,7 @@
           <div class="form-group">
             <ion-item class="inp" fill="outline">
               <ion-label position="floating">Nome</ion-label> 
-              <ion-input placeholder="Nome" type="text" formControlName="nome" name="nome" id="nome" ngModel required ></ion-input>
+              <ion-input placeholder="Nome" [(ngModel)]="medico.nome" type="text" formControlName="nome" name="nome" id="nome" ngModel required ></ion-input>
             </ion-item>
             <div *ngIf="atualizar.get('nome')?.errors?.['required'] && atualizar.get('nome')?.touched">
               Nome obrigatório
@@ -30,7 +30,7 @@
           <div class="form-group">
             <ion-item class="inp" fill="outline">
               <ion-label position="floating">E-mail</ion-label>
-              <ion-input placeholder="E-mail" type="email" formControlName="email" name="email" id="email" ngModel required email></ion-input>
+              <ion-input [(ngModel)]="medico.email" placeholder="E-mail" type="email" formControlName="email" name="email" id="email" ngModel required email></ion-input>
             </ion-item>
             <div *ngIf="atualizar.get('email')?.errors?.['required'] && atualizar.get('email')?.touched">
               E-mail obrigatório
@@ -39,7 +39,7 @@
           <div class="form-group">
             <ion-item class="inp" fill="outline">
               <ion-label position="floating">CRM</ion-label>
-              <ion-input placeholder="crm" type="text" name="crm" id="crm" formControlName="crm" ngModel required></ion-input>
+              <ion-input [(ngModel)]="medico.crm" placeholder="crm" type="text" name="crm" id="crm" formControlName="crm" ngModel required></ion-input>
             </ion-item>
             <div *ngIf="atualizar.get('crm')?.errors?.['required'] && atualizar.get('crm')?.touched">
               CRM obrigatório
@@ -48,63 +48,71 @@
           <div class="form-group">
             <ion-item class="inp" fill="outline">
               <ion-label position="floating">Telefone</ion-label>
-              <ion-input placeholder="Telefone" type="text" name="telefone" formControlName="telefone" id="telefone" ngModel required></ion-input>
+              <ion-input [(ngModel)]="medico.telefone" placeholder="Telefone" type="text" name="telefone" formControlName="telefone" id="telefone" ngModel required></ion-input>
             </ion-item>
             <div *ngIf="atualizar.get('telefone')?.errors?.['required'] && atualizar.get('telefone')?.touched">
               Telefone obrigatório
           </div>
           </div>
+
           <div class="form-group">
-            <ion-item class="inp" fill="outline">
-              <ion-label position="floating">Especialidade</ion-label>
-              <ion-input placeholder="Especialidade" type="text" formControlName="especialidade" name="especialidade" id="especialidade" ngModel required></ion-input>
+
+            <ion-item class="inp-select">
+              <ion-select aria-label="Fruit" interface="popover" formControlName="especialidade" placeholder="Especialidade">
+                <ion-select-option value="CARDIOLOGIA">CARDIOLOGIA</ion-select-option>
+                <ion-select-option value="ORTOPEDIA">ORTOPEDIA</ion-select-option>
+                <ion-select-option value="GINECOLOGIA">GINECOLOGIA</ion-select-option>
+                <ion-select-option value="DERMATOLOGIA">DERMATOLOGIA</ion-select-option>
+              </ion-select>
             </ion-item>
+            
             <div *ngIf="atualizar.get('especialidade')?.errors?.['required'] && atualizar.get('especialidade')?.touched">
               Especialidade obrigatório
           </div>
           </div>
+
           <h3>Endereço</h3>
           <div formGroupName="endereco">
             <div class="form-group">
               <ion-item class="inp" fill="outline">
                 <ion-label position="floating">CEP</ion-label>
-                <ion-input placeholder="CEP" type="text" name="cep" id="cep" formControlName="cep" ngModel required></ion-input>
+                <ion-input [(ngModel)]="medico.endereco.cep" placeholder="CEP" type="text" name="cep" id="cep" formControlName="cep" ngModel required></ion-input>
               </ion-item>
             </div>
             <div class="form-group">
               <ion-item class="inp"  fill="outline">
                 <ion-label position="floating">Logradouro</ion-label>
-                <ion-input placeholder="Logradouro" type="text" name="logradouro" formControlName="logradouro" id="logradouro" ngModel required></ion-input>
+                <ion-input [(ngModel)]="medico.endereco.logradouro" placeholder="Logradouro" type="text" name="logradouro" formControlName="logradouro" id="logradouro" ngModel required></ion-input>
               </ion-item>
             </div>
             <div class="form-group">
               <ion-item class="inp" fill="outline">
                 <ion-label position="floating">Numero</ion-label>
-                <ion-input placeholder="Numero" type="text" name="numero" id="numero" formControlName="numero" ngModel required></ion-input>
+                <ion-input [(ngModel)]="medico.endereco.numero" placeholder="Numero" type="text" name="numero" id="numero" formControlName="numero" ngModel required></ion-input>
               </ion-item>
             </div>
             <div class="form-group">
               <ion-item class="inp" fill="outline">
                 <ion-label position="floating">Complemento</ion-label>
-                <ion-input placeholder="Complemento" type="text" formControlName="complemento" name="Complemento" id="complemento" ngModel required></ion-input>
+                <ion-input [(ngModel)]="medico.endereco.complemento" placeholder="Complemento" type="text" formControlName="complemento" name="Complemento" id="complemento" ngModel required></ion-input>
               </ion-item>
             </div>
             <div class="form-group">
               <ion-item class="inp" fill="outline">
                 <ion-label position="floating">Cidade</ion-label>
-                <ion-input placeholder="Cidade" type="text" name="cidade" id="cidade" formControlName="cidade" ngModel required></ion-input>
+                <ion-input [(ngModel)]="medico.endereco.cidade" placeholder="Cidade" type="text" name="cidade" id="cidade" formControlName="cidade" ngModel required></ion-input>
               </ion-item>
             </div>
             <div class="form-group">
               <ion-item class="inp" fill="outline">
                 <ion-label position="floating">Bairro</ion-label>
-                <ion-input placeholder="Bairro" type="text" name="bairro" id="bairro" formControlName="bairro" ngModel required></ion-input>
+                <ion-input [(ngModel)]="medico.endereco.bairro" placeholder="Bairro" type="text" name="bairro" id="bairro" formControlName="bairro" ngModel required></ion-input>
               </ion-item>
             </div>
             <div class="form-group">
               <ion-item class="inp" fill="outline">
                 <ion-label position="floating">UF</ion-label>
-                <ion-input placeholder="UF" type="text" name="uf" id="uf"  formControlName="uf" ngModel required></ion-input>
+                <ion-input [(ngModel)]="medico.endereco.uf" placeholder="UF" type="text" name="uf" id="uf"  formControlName="uf" ngModel required></ion-input>
               </ion-item>
             </div>
           </div>
@@ -124,6 +132,10 @@
 
           <div>
             <p><ion-icon name="mail-outline"></ion-icon> {{ medico.email }}</p>
+          </div>
+
+          <div>
+            <p><ion-icon name="call-outline"></ion-icon> {{ medico.telefone }}</p>
           </div>
 
           <div>

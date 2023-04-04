@@ -1,0 +1,46 @@
+<div class="container-lista">
+  <div class="fundo-link">
+    <a class="link" routerLink="/tabs/home" routerLinkActive="active" >
+      <ion-icon class="seta" name="arrow-back"></ion-icon>
+      Lista de medicos
+    </a>
+  </div>
+
+  <div padding>
+    <form class="frm" method="post" (ngSubmit)="buscarAtendimento()">
+      <div class="form-group">
+        <ion-item class="inp" fill="outline">
+          <ion-label position="floating">Nome</ion-label>
+          <ion-input placeholder="Nome" type="text" name="nome" id="nome" [(ngModel)]="nome" required ></ion-input>
+        </ion-item>
+      </div>
+      <div class="buttons">
+        <button class="btnBuscar" type="submit">
+          Buscar
+        </button>
+        <button class="btnLimpar" (click)="LimparTabela()">Limpar</button>
+      </div>
+    </form>
+
+    <ng-container *ngIf="atendimentoBusca.length">
+      <div padding class="container_dados">
+        <ion-row class="row" *ngFor="let busca of atendimentoBusca">
+          <ion-col>{{ busca.paciente }}</ion-col>
+          <ion-col>{{ busca.data }}</ion-col>
+          <ion-col>{{ busca.horario }}</ion-col>
+        </ion-row>
+      </div>
+    </ng-container>
+    <ng-container *ngIf="!atendimentoBusca.length">
+      <div padding class="container_dados">
+        <ion-row class="row" *ngFor="let atendimento of atendimento">
+          <ion-col>{{ atendimento.paciente }}</ion-col>
+          <ion-col>{{ atendimento.data }}</ion-col>
+          <ion-col>{{ atendimento.horario }}</ion-col>
+        </ion-row>
+    </div>
+    </ng-container>
+  </div>
+
+
+</div>

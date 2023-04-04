@@ -15,6 +15,18 @@ export class AgendarService{
     return this.http.post(this.urlApi, cadastro)
   }
 
+  getAtendimento(){
+    return this.http.get<any>(this.urlApi)
+  }
+
+  buscarPorNome(nome: any){
+    return this.http.get<any>(`${this.urlApi}/buscar?nome=${nome}`)
+  }
+
+  buscarAtendimentoId(id : any){
+    return this.http.get<any>(`${this.urlApi}/${id}`)
+  }
+
 }
 
 

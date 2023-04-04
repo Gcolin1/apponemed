@@ -1,7 +1,7 @@
 export interface Atendimento{
   id: string
-  nome: string
+  paciente: string
   data: string
   cre: string
-  
+  horario: string
 }
